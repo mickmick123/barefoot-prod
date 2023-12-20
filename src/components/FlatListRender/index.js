@@ -1,0 +1,9 @@
+export { default as TrendingBoxdataView } from './TrendingBoxdataView';
+export { default as TrendingCategoryView } from './TrendingCategoryView';
+export { default as TrendingDataView } from './TrendingDataView';
+export { default as TrendingEvent } from './TrendingEvent';
+export { default as TrendingBookmark } from './TrendingBookmark';
+export { default as ChatDataView } from './ChatDataView';
+export { default as FAQData } from './FAQData';
+export { default as PaymentListData } from './PaymentListData';
+export { default as NotificatioandSearchIcon } from './NotificatioandSearchIcon';
