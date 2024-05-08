@@ -1,9 +1,7 @@
+import {StyleSheet, Dimensions, Platform} from 'react-native';
+import {SF, SH, SW, Fonts, Colors, widthPercent} from '../../utils';
 
-import { StyleSheet, Dimensions, Platform } from 'react-native';
-import { SF, SH, SW, Fonts, Colors, widthPercent } from '../../utils';
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
-
+const {height: SCREEN_HEIGHT} = Dimensions.get('window');
 
 export default StyleSheet.create({
   minstyleviewphotograpgy: {
@@ -18,11 +16,9 @@ export default StyleSheet.create({
   minviewsigninscreen: {
     width: '100%',
     height: '100%',
-
   },
   minflexview: {
     width: '100%',
     height: '100%',
   },
-  
 });

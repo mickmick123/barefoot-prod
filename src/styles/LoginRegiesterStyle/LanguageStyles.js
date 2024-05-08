@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { SF, SH, SW, Colors, Fonts } from '../../utils';
+import {StyleSheet} from 'react-native';
+import {SF, SH, SW, Colors, Fonts} from '../../utils';
 
 export default StyleSheet.create({
   DropdownStyles: {
@@ -14,13 +14,13 @@ export default StyleSheet.create({
     paddingRight: SH(10),
     backgroundColor: Colors.white_text_color,
     paddingHorizontal: SH(15),
-    borderRadius: SH(100)
+    borderRadius: SH(100),
   },
   DropdownStylestwo: {
     borderWidth: SH(0),
     padding: SH(0),
     paddingVertical: SH(0),
-    width: "100%",
+    width: '100%',
     borderRightWidth: SH(1),
     borderRadius: SH(0),
     borderRightColor: Colors.light_gray_text_color,
@@ -28,7 +28,7 @@ export default StyleSheet.create({
     paddingRight: SH(10),
     backgroundColor: Colors.white_text_color,
     paddingHorizontal: SH(15),
-    borderRadius: SH(100)
+    borderRadius: SH(100),
   },
   DropdownStylesLead: {
     fontSize: SF(22),
@@ -76,7 +76,7 @@ export default StyleSheet.create({
   imagsetview: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   DropdownStyles: {
     borderWidth: SH(1),
@@ -90,13 +90,13 @@ export default StyleSheet.create({
     paddingRight: SH(10),
     backgroundColor: Colors.white_text_color,
     paddingHorizontal: SH(15),
-    borderRadius: SH(100)
+    borderRadius: SH(100),
   },
   DropdownStylestwo: {
     borderWidth: SH(0),
     padding: SH(0),
     paddingVertical: SH(5),
-    width: "100%",
+    width: '100%',
     borderRightWidth: SH(1),
     borderRadius: SH(0),
     borderRightColor: Colors.light_gray_text_color,
@@ -104,7 +104,7 @@ export default StyleSheet.create({
     paddingRight: SH(10),
     backgroundColor: Colors.white_text_color,
     paddingHorizontal: SH(15),
-    borderRadius: SH(100)
+    borderRadius: SH(100),
   },
   DropdownStylesLead: {
     fontSize: SF(20),
@@ -130,7 +130,7 @@ export default StyleSheet.create({
     borderColor: Colors.black_text_color,
     borderRadius: SW(7),
     alignSelf: 'center',
-    position: 'relative'
+    position: 'relative',
   },
   SettingStyle: {
     flexDirection: 'row',
@@ -141,18 +141,18 @@ export default StyleSheet.create({
     borderColor: Colors.black_text_color,
     borderRadius: SW(7),
     alignSelf: 'center',
-    position: 'relative'
+    position: 'relative',
   },
   ConfirmButtonView: {
     justifyContent: 'center',
     alignItems: 'center',
     width: '70%',
-    paddingTop: SH(12)
+    paddingTop: SH(12),
   },
   LoginButton: {
     paddingVertical: SH(0),
     width: '100%',
-    borderRadius: SH(200)
+    borderRadius: SH(200),
   },
   LanguageMinView: {
     flexDirection: 'row',
@@ -164,36 +164,36 @@ export default StyleSheet.create({
     borderWidth: SH(1),
     paddingHorizontal: SH(10),
     marginBottom: SH(10),
-    borderRadius: SH(8)
+    borderRadius: SH(8),
   },
   TextStyle: {
     color: Colors.black_text_color,
     fontFamily: Fonts.Poppins_Medium,
-    fontSize: SF(17)
+    fontSize: SF(17),
   },
   LanguageViewStyleModal: {
     backgroundColor: Colors.white_text_color,
     padding: SH(10),
-    borderRadius: SH(10)
+    borderRadius: SH(10),
   },
   CloseButtonStyle: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     width: '100%',
     paddingRight: SH(10),
-    paddingBottom: SH(10)
+    paddingBottom: SH(10),
   },
   FlexViewStyle: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   BtnVieStyle: {
     width: '80%',
     position: 'absolute',
-    bottom: SH(30)
+    bottom: SH(30),
   },
   DropDownIcon: {
     position: 'absolute',
-    right: SW(15)
-  }
+    right: SW(15),
+  },
 });

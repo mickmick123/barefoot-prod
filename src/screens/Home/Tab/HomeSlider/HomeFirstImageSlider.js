@@ -1,23 +1,25 @@
-import React, { useState, useMemo } from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
-import Carousel, { Pagination } from 'react-native-snap-carousel';
-import { HomeStyles } from '../../../../styles';
-import { carouselItems, SH, widthPercent } from '../../../../utils';
-import { Button, Spacing } from '../../../../components';
-import { useTheme } from '@react-navigation/native';
-import { useTranslation } from "react-i18next";
+import React, {useState, useMemo} from 'react';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
+import Carousel, {Pagination} from 'react-native-snap-carousel';
+import {HomeStyles} from '../../../../styles';
+import {carouselItems, SH, widthPercent} from '../../../../utils';
+import {Button, Spacing} from '../../../../components';
+import {useTheme} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
-const App = (props) => {
-  const { Colors } = useTheme();
-  const { buyticket, onPress } = props;
+const App = props => {
+  const {Colors} = useTheme();
+  const {buyticket, onPress} = props;
   let _slider1Ref;
   const [index, setIndex] = useState(0);
   const HomeStyle = useMemo(() => HomeStyles(Colors), [Colors]);
-  const { t } = useTranslation();
+  const {t} = useTranslation();
 
-  const renderItem = ({ item, index }) => {
+  const renderItem = ({item, index}) => {
     return (
-      <TouchableOpacity style={HomeStyle.minviewfunction} onPress={() => onPress()}>
+      <TouchableOpacity
+        style={HomeStyle.minviewfunction}
+        onPress={() => onPress()}>
         <View style={HomeStyle.flexrowimagandtext}>
           <View style={HomeStyle.imagecenyer}>
             <Image source={item.imge} style={HomeStyle.SliderImageStyles} />
@@ -26,7 +28,11 @@ const App = (props) => {
         <View style={HomeStyle.postionaddinternation}>
           <Text style={HomeStyle.Colorwhitetext}>{t(item.text)}</Text>
           <Spacing space={SH(15)} />
-          <Button onPress={() => buyticket()} buttonStyle={HomeStyle.Bookbuttonwidtgh} title={t("Book Now")} />
+          <Button
+            onPress={() => buyticket()}
+            buttonStyle={HomeStyle.Bookbuttonwidtgh}
+            title={t('Book Now')}
+          />
         </View>
       </TouchableOpacity>
     );
@@ -35,7 +41,7 @@ const App = (props) => {
   return (
     <View style={[HomeStyle.exampleContainer, HomeStyle.bgcolorset]}>
       <Carousel
-        ref={c => _slider1Ref = c}
+        ref={c => (_slider1Ref = c)}
         data={carouselItems}
         renderItem={renderItem}
         sliderWidth={widthPercent(100)}
@@ -55,7 +61,7 @@ const App = (props) => {
       <Pagination
         dotsLength={carouselItems.length}
         activeDotIndex={index}
-        carouselRef={c => _slider1Ref = c}
+        carouselRef={c => (_slider1Ref = c)}
         containerStyle={HomeStyle.paginationContainer}
         dotColor={Colors.theme_backgound}
         dotStyle={HomeStyle.paginationDot}

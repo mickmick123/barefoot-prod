@@ -1,7 +1,20 @@
-import { StyleSheet } from 'react-native';
-import { SF, SH, SW, Fonts, Colors } from '../../utils';
+import {StyleSheet} from 'react-native';
+import {SF, SH, SW, Fonts, Colors} from '../../utils';
 
 export default StyleSheet.create({
+  SelectList: {
+    borderWidth: 1,
+    zIndex: 100,
+    backgroundColor: '#ffffff',
+  },
+  flexSelect: {
+    display: 'flex',
+    height: SH(100),
+    width: '100%',
+    paddingRight: '3%',
+    paddingLeft: '3%',
+    zIndex: 100,
+  },
   ScrollViewStyles: {
     width: '100%',
     height: 'auto',
@@ -9,18 +22,18 @@ export default StyleSheet.create({
   Backgroundhight: {
     height: '100%',
     backgroundColor: Colors.white_text_color,
-    width: '100%'
+    width: '100%',
   },
   uri: {
     width: SW(200),
-    height: SH(100)
+    height: SH(100),
   },
   LeftIconLeftStyle: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   PaddingVertical: {
-    PaddingVertical: SH(10)
+    PaddingVertical: SH(10),
   },
   headerStyle: {
     backgroundColor: Colors.white_text_color,
@@ -29,7 +42,7 @@ export default StyleSheet.create({
     color: Colors.theme_backgound,
     fontSize: SF(20),
     fontWeight: '700',
-    fontFamily: Fonts.Poppins_Bold
+    fontFamily: Fonts.Poppins_Bold,
   },
   MinViewContent: {
     width: '95%',
@@ -46,14 +59,14 @@ export default StyleSheet.create({
   Container: {
     flexDirection: 'row',
     justifyContent: 'center',
-    width: '100%'
+    width: '100%',
   },
   FlexRowPassword: {
     width: '100%',
     borderRadius: SH(7),
     flexDirection: 'row',
     backgroundColor: Colors.white_text_color,
-    height: SH(50),
+    height: SH(40),
     justifyContent: 'space-between',
     alignItems: 'center',
     shadowColor: Colors.black_text_color,
@@ -63,7 +76,7 @@ export default StyleSheet.create({
     right: SH(30),
     height: SH(50),
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   IconPostionAboluteTwo: {
     position: 'absolute',
@@ -71,7 +84,7 @@ export default StyleSheet.create({
     height: SH(50),
     top: SH(37),
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   CountryCodeIconCenter: {
     position: 'absolute',
@@ -80,18 +93,18 @@ export default StyleSheet.create({
     zIndex: 89,
     top: SH(37),
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   PaddingLeftCountryInput: {
-    paddingLeft: SH(90)
+    paddingLeft: SH(90),
   },
   SearchInputBorder: {
     borderWidth: SH(0),
   },
   CenteredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   ModalView: {
     backgroundColor: Colors.white_text_color,
@@ -99,7 +112,7 @@ export default StyleSheet.create({
     shadowColor: Colors.black_text_color,
     shadowOffset: {
       width: SW(0),
-      height: SH(2)
+      height: SH(2),
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
@@ -116,8 +129,8 @@ export default StyleSheet.create({
   },
   CenteredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   checkiconright: {
     borderWidth: SH(3),
@@ -127,11 +140,11 @@ export default StyleSheet.create({
     flexDirection: 'row',
     borderColor: Colors.theme_backgound,
     alignContent: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   setroundcenter: {
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   setbackgroundicon: {
     flexDirection: 'row',
@@ -152,7 +165,7 @@ export default StyleSheet.create({
     fontFamily: Fonts.Poppins_Medium,
   },
   setokbutton: {
-    width: '47%'
+    width: '47%',
   },
   buttonminview: {
     flexDirection: 'row',
@@ -167,12 +180,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   container: {
-    height: '100%'
+    height: '100%',
   },
   SearchHomeTab: {
     width: '100%',
     backgroundColor: 'transperent',
-    shadowColor: "transperent",
+    shadowColor: 'transperent',
     shadowOffset: {
       width: SW(0),
       height: Platform.OS === 'ios' ? 0 : 0,
@@ -208,11 +221,11 @@ export default StyleSheet.create({
   },
   ScrollViewTestHeight: {
     width: '100%',
-    height: 'auto'
+    height: 'auto',
   },
   buttonotp: {
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   CallIconView: {
     width: SW(40),
@@ -222,22 +235,22 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: Colors.white_text_color,
-    marginRight: SH(20)
+    marginRight: SH(20),
   },
   RemoveBgColor: {
-    backgroundColor: Colors.white_text_color
+    backgroundColor: Colors.white_text_color,
   },
   RemoveBgColorTwos: {
-    backgroundColor: Colors.theme_backgound
+    backgroundColor: Colors.theme_backgound,
   },
   InputViewWidth: {
-    width: '100%'
+    width: '100%',
   },
   PostionAbsoluteIcon: {
     position: 'absolute',
     top: SH(20),
     left: SH(20),
-    zIndex: 9
+    zIndex: 9,
   },
   BgColorWhite: {
     backgroundColor: Colors.theme_background,
@@ -246,18 +259,18 @@ export default StyleSheet.create({
     borderRadius: SH(200),
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   Splasdhimagestyles: {
     width: SW(200),
-    height: SW(200)
+    height: SW(200),
   },
   setminviewstylesplasg: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    height: '100%'
+    height: '100%',
   },
   setbgcolorgrsay: {
     backgroundColor: Colors.gray_text_color,
@@ -268,8 +281,8 @@ export default StyleSheet.create({
   },
   CenteredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   ModalView: {
     backgroundColor: Colors.white_text_color,
@@ -277,7 +290,7 @@ export default StyleSheet.create({
     shadowColor: Colors.black_text_color,
     shadowOffset: {
       width: SW(0),
-      height: SH(2)
+      height: SH(2),
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
@@ -287,7 +300,7 @@ export default StyleSheet.create({
   },
   setroundcenter: {
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   checkiconright: {
     borderWidth: SH(3),
@@ -297,14 +310,14 @@ export default StyleSheet.create({
     flexDirection: 'row',
     borderColor: Colors.theme_backgound,
     alignContent: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   NotificationFlex: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   Rightspace: {
     paddingLeft: SH(5),
-    paddingRight: SH(15)
-  }
+    paddingRight: SH(15),
+  },
 });

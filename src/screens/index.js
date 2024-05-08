@@ -17,16 +17,3 @@ export * from './HelpScreen';
 export * from './FAQScreen';
 export * from './ScannerScreen';
 export * from './SettingsScreen';
-
-
-
-
-
-
-
-
-
-
-
-
-

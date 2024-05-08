@@ -1,6 +1,7 @@
 package com.vginfotec.eventmanagement;
 
 import com.facebook.react.ReactActivity;
+// import com.reactlibrary.RNGooglePlacePickerPackage;
 
 public class MainActivity extends ReactActivity {
 
@@ -10,6 +11,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Event";
+    return "Barefoot";
   }
 }

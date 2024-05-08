@@ -2,7 +2,17 @@ import React, {useMemo} from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import propTypes from 'prop-types';
 
-function RowComponent({children, rowStyle, flex, backgroundColor, width, height, alignItems, touchable, onPress }){
+function RowComponent({
+  children,
+  rowStyle,
+  flex,
+  backgroundColor,
+  width,
+  height,
+  alignItems,
+  touchable,
+  onPress,
+}) {
   const styles = useMemo(
     () =>
       StyleSheet.create({
@@ -16,12 +26,16 @@ function RowComponent({children, rowStyle, flex, backgroundColor, width, height,
           ...rowStyle,
         },
       }),
-    [flex, rowStyle, backgroundColor,width,height,alignItems],
+    [flex, rowStyle, backgroundColor, width, height, alignItems],
   );
 
-  return touchable 
-  ? <TouchableOpacity style={styles.rowStyles} onPress={onPress}>{children}</TouchableOpacity> 
-  :  <View style={styles.rowStyles}>{children}</View>;
+  if(touchable) {
+    return <TouchableOpacity style={styles.rowStyles} onPress={onPress}>
+    {children}
+  </TouchableOpacity>
+  } else {
+    return <View style={styles.rowStyles}>{children}</View>
+  }
 }
 
 RowComponent.defaultProps = {
@@ -32,7 +46,7 @@ RowComponent.defaultProps = {
   width: null,
   height: null,
   touchable: false,
-  onPress: () => {}
+  onPress: () => {},
 };
 
 RowComponent.propTypes = {
@@ -40,7 +54,7 @@ RowComponent.propTypes = {
   flex: propTypes.number,
   backgroundColor: propTypes.string,
   alignItems: propTypes.string,
-  width: propTypes.any ,
+  width: propTypes.any,
   height: propTypes.any,
   touchable: propTypes.bool,
   onPress: propTypes.func,

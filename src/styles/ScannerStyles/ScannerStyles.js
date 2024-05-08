@@ -1,9 +1,7 @@
+import {StyleSheet, Dimensions, Platform} from 'react-native';
+import {SF, SH, SW, Fonts, Colors, widthPercent} from '../../utils';
 
-import { StyleSheet, Dimensions, Platform } from 'react-native';
-import { SF, SH, SW, Fonts, Colors, widthPercent } from '../../utils';
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
-
+const {height: SCREEN_HEIGHT} = Dimensions.get('window');
 
 export default StyleSheet.create({
   scanvicolor: {
@@ -17,7 +15,7 @@ export default StyleSheet.create({
     height: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   minviewallcontent: {
     width: '90%',
@@ -46,14 +44,14 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%'
+    width: '100%',
   },
   Scanviewcontentsecond: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    paddingLeft: SH(40)
+    paddingLeft: SH(40),
   },
   Camerastyles: {
     width: SW(300),
@@ -66,12 +64,12 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '100%'
+    width: '100%',
   },
   Markerstyles: {
     width: SW(300),
     height: SH(310),
     borderRadius: SH(15),
     borderWidth: 0,
-  }
+  },
 });

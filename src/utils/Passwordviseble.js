@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 
 export const useTogglePasswordVisibility = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
@@ -44,6 +44,6 @@ export const useTogglePasswordVisibility = () => {
     rightIcontwoth,
     handlePasswordVisibility,
     handlePasswordVisibilitytwo,
-    handlePasswordVisibilitytwoth
+    handlePasswordVisibilitytwoth,
   };
 };

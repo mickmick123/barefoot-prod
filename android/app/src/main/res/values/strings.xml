@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Event</string>
+    <string name="app_name">Barefoot</string>
          <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">(ADD_YOUR_API_KEY)</string>
 </resources>

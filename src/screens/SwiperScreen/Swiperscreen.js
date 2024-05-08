@@ -1,20 +1,20 @@
-import React, { useMemo } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import React, {useMemo} from 'react';
+import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import { SwiperStyle } from '../../styles';
-import { Button, Spacing, Lottie } from '../../components';
+import {SwiperStyle} from '../../styles';
+import {Button, Spacing, Lottie} from '../../components';
 import RouteName from '../../routes/RouteName';
-import { Swiperdata, SH } from '../../utils';
+import {Swiperdata, SH} from '../../utils';
 import images from '../../index';
-import { useTheme } from '@react-navigation/native';
-import { useTranslation } from "react-i18next";
+import {useTheme} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
-const App = (props) => {
-  const { Colors } = useTheme();
-  const { navigation } = props;
-  const { t } = useTranslation();
+const App = props => {
+  const {Colors} = useTheme();
+  const {navigation} = props;
+  const {t} = useTranslation();
   const SwiperStyles = useMemo(() => SwiperStyle(Colors), [Colors]);
-  const RenderItem = ({ item }) => {
+  const RenderItem = ({item}) => {
     return (
       <View>
         <ScrollView
@@ -26,15 +26,16 @@ const App = (props) => {
             </View>
           </View>
         </ScrollView>
-        <TouchableOpacity style={SwiperStyles.iconbgcolorview} onPress={() => navigation.navigate(RouteName.TRANSLATION_SCREEN)}>
-          <Lottie Lottiewidthstyle={SwiperStyles.iconbgcolorview} source={images.Rightaerrow_swiper} />
+        <TouchableOpacity
+          style={SwiperStyles.iconbgcolorview}
+          onPress={() => navigation.navigate(RouteName.TRANSLATION_SCREEN)}>
+          <Lottie
+            Lottiewidthstyle={SwiperStyles.iconbgcolorview}
+            source={images.Rightaerrow_swiper}
+          />
         </TouchableOpacity>
-        <Text style={SwiperStyles.titleStyle}>
-          {t(item.title)}
-        </Text>
-        <Text style={SwiperStyles.textstyle}>
-          {t(item.text)}
-        </Text>
+        <Text style={SwiperStyles.titleStyle}>{t(item.title)}</Text>
+        <Text style={SwiperStyles.textstyle}>{t(item.text)}</Text>
       </View>
     );
   };
@@ -43,10 +44,8 @@ const App = (props) => {
       <View style={SwiperStyles.setbgbuttondiv}>
         <View style={SwiperStyles.buttonCircle}>
           <Button
-            title={t("Get_Started")}
-            onPress={
-              () => navigation.navigate(RouteName.TRANSLATION_SCREEN)
-            }
+            title={t('Get_Started')}
+            onPress={() => navigation.navigate(RouteName.LOGIN_SCREEN)}
           />
         </View>
       </View>
@@ -56,16 +55,17 @@ const App = (props) => {
     return (
       <View style={SwiperStyles.setbgbuttondiv}>
         <Spacing space={SH(12)} />
-        <Text style={SwiperStyles.Nexttextstyle}>{t("Next_Text")}</Text>
+        <Text style={SwiperStyles.Nexttextstyle}>{t('Next_Text')}</Text>
       </View>
     );
   };
   const _renderSkipButton = () => {
     return (
       <View style={SwiperStyles.setbgbuttondiv}>
-        <TouchableOpacity onPress={() => navigation.navigate(RouteName.LOGIN_SCREEN)}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate(RouteName.LOGIN_SCREEN)}>
           <Spacing space={SH(12)} />
-          <Text style={SwiperStyles.Nexttextstyle}>{t("Skip_Text")}</Text>
+          <Text style={SwiperStyles.Nexttextstyle}>{t('Skip_Text')}</Text>
         </TouchableOpacity>
       </View>
     );
@@ -86,4 +86,3 @@ const App = (props) => {
   );
 };
 export default App;
-

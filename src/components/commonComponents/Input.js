@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import React, {useMemo} from 'react';
 import propTypes from 'prop-types';
-import { View, StyleSheet } from 'react-native';
-import { SF, SH, SW, Fonts, Colors } from '../../utils';
-import { Input } from 'react-native-elements';
+import {View, StyleSheet} from 'react-native';
+import {SF, SH, SW, Fonts, Colors} from '../../utils';
+import {Input} from 'react-native-elements';
 
 function Inputs({
   title,
@@ -20,23 +20,23 @@ function Inputs({
   maxLength,
   leftIcon = {},
   rightIcon = {},
-  errorMessage = "",
+  errorMessage = '',
   disabled = false,
   required = false,
   containerStyle,
   onEndEditing,
   inputContainerStyle,
-  numberOfLines
+  numberOfLines,
 }) {
   const colorsset = Colors;
   const styles = useMemo(
     () =>
       StyleSheet.create({
-        container: { width: '100%', ...containerStyle, marginBottom: SH(0), },
+        container: {width: '100%', ...containerStyle, marginBottom: SH(0)},
         inputContainerStyle: {
           borderBottomWidth: SH(0),
-          width: "100%",
-          ...inputContainerStyle
+          width: '100%',
+          ...inputContainerStyle,
         },
         input_style: {
           width: '100%',
@@ -66,7 +66,7 @@ function Inputs({
         placeholderStyle: {
           fontSize: SF(19),
           color: Colors.theme_background,
-          fontFamily: Fonts.Poppins_Medium
+          fontFamily: Fonts.Poppins_Medium,
         },
         errorStyle: {
           color: colorsset.theme_background,
@@ -78,9 +78,9 @@ function Inputs({
   return (
     <View style={styles.container}>
       <Input
-        label={title + (required ? "*" : "")}
+        label={title + (required ? '*' : '')}
         placeholder={placeholder}
-        onChangeText={(text) => onChangeText(text)}
+        onChangeText={text => onChangeText(text)}
         leftIcon={leftIcon}
         placeholderTextColor={Colors.black_text_color}
         rightIcon={rightIcon}
@@ -100,7 +100,7 @@ function Inputs({
         inputStyle={styles.input_style}
         labelStyle={styles.labelStyle}
         inputContainerStyle={styles.inputContainerStyle}
-        onEndEditing={(e) => onEndEditing(e)}
+        onEndEditing={e => onEndEditing(e)}
       />
     </View>
   );
@@ -111,16 +111,15 @@ Inputs.defaultProps = {
   placeholder: '',
   titleStyle: {},
   inputStyle: {},
-  onChangeText: () => { },
-  onFocus: () => { },
-  onBlur: () => { },
+  onChangeText: () => {},
+  onFocus: () => {},
+  onBlur: () => {},
   value: '',
   textprops: {},
   inputprops: {},
   inputType: null,
   autoCompleteType: '',
-  onEndEditing: () => { },
-
+  onEndEditing: () => {},
 };
 
 Inputs.propTypes = {

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 import images from '../index';
 
 export const useTogglePasswordVisibility = () => {
@@ -41,37 +41,35 @@ export const useTogglePasswordVisibility = () => {
     }
   };
 
-
   const handlePasswordVisibilityfour = () => {
-    if (rightIconfour === 'camera-outline')  {
+    if (rightIconfour === 'camera-outline') {
       setrightIconfour('camera-off-outline');
       setpasswordVisibilitytfour(!passwordVisibilitytfour);
-      setText('camera-off')
-      setImage(images.speker_off)
+      setText('camera-off');
+      setImage(images.speker_off);
     } else if (rightIconfour === 'camera-off-outline') {
       setrightIconfour('camera-outline');
       setpasswordVisibilitytfour(!passwordVisibilitytfour);
-      setText('Camera-on')
-      setImage(images.speker_on)
+      setText('Camera-on');
+      setImage(images.speker_on);
     }
   };
 
   const handlePasswordVisibilityfive = () => {
-    if (rightIconfour === 'camera-outline')  {
+    if (rightIconfour === 'camera-outline') {
       setrightIconfour('camera-off-outline');
       setpasswordVisibilitytfour(!passwordVisibilitytfour);
-      setText('camera-off')
-      setImage(images.speker_on)
+      setText('camera-off');
+      setImage(images.speker_on);
     } else if (rightIconfour === 'camera-off-outline') {
       setrightIconfour('camera-outline');
       setpasswordVisibilitytfour(!passwordVisibilitytfour);
-      setText('Camera-on')
-      setImage(images.speker_off)
+      setText('Camera-on');
+      setImage(images.speker_off);
     }
   };
-  
+
   // const handlePasswordVisibilityfour = () => {
-    
 
   return {
     passwordVisibilitytwo,

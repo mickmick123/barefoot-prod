@@ -1,4 +1,4 @@
-import { Lottie, RatingScreen } from '../components';
+import {Lottie, RatingScreen} from '../components';
 import React from 'react';
 import images from '../index';
 
@@ -6,137 +6,130 @@ export const Swiperdata = [
   {
     key: 's1',
     text: 'Swiper_1',
-    title: "Swiper_2",
-    animation: <Lottie
-      source={images.First_Swiper}
-    />,
+    title: 'Swiper_2',
+    animation: <Lottie source={images.First_Swiper} />,
   },
   {
     key: 's2',
     text: 'Swiper_3',
     title: 'Swiper_4',
-    animation: <Lottie
-      source={images.Three_Swiper}
-    />,
+    animation: <Lottie source={images.Three_Swiper} />,
   },
   {
     key: 's3',
     text: 'Swiper_5',
     title: 'Swiper_6',
-    animation: <Lottie
-      source={images.Two_Swiper}
-    />,
+    animation: <Lottie source={images.Two_Swiper} />,
     backgroundColor: 'transparent',
   },
-
-]
+];
 export const Countrydata = [
   {
-    "id": 1,
-    "textsimple": 'Afghanistan',
-    "digit": '+ 93',
+    id: 1,
+    textsimple: 'Afghanistan',
+    digit: '+ 93',
   },
   {
-    "id": 2,
-    "textsimple": 'Albania',
-    "digit": '+ 355',
+    id: 2,
+    textsimple: 'Albania',
+    digit: '+ 355',
   },
   {
-    "id": 3,
-    "textsimple": 'Algeria',
-    "digit": '+ 213',
+    id: 3,
+    textsimple: 'Algeria',
+    digit: '+ 213',
   },
   {
-    "id": 1,
-    "textsimple": 'Belgium',
-    "digit": '+ 32',
+    id: 1,
+    textsimple: 'Belgium',
+    digit: '+ 32',
   },
   {
-    "id": 4,
-    "textsimple": 'Belize',
-    "digit": '+ 501',
+    id: 4,
+    textsimple: 'Belize',
+    digit: '+ 501',
   },
   {
-    "id": 5,
-    "textsimple": 'Benin',
-    "digit": '+ 229',
+    id: 5,
+    textsimple: 'Benin',
+    digit: '+ 229',
   },
   {
-    "id": 6,
-    "textsimple": 'Gambia',
-    "digit": '+ 220',
+    id: 6,
+    textsimple: 'Gambia',
+    digit: '+ 220',
   },
   {
-    "id": 7,
-    "textsimple": 'Georgia',
-    "digit": '+ 995',
+    id: 7,
+    textsimple: 'Georgia',
+    digit: '+ 995',
   },
   {
-    "id": 8,
-    "textsimple": 'Greece',
-    "digit": '+ 30',
+    id: 8,
+    textsimple: 'Greece',
+    digit: '+ 30',
   },
   {
-    "id": 9,
-    "textsimple": 'Hong Kong',
-    "digit": '+ 852',
+    id: 9,
+    textsimple: 'Hong Kong',
+    digit: '+ 852',
   },
   {
-    "id": 10,
-    "textsimple": 'Iceland',
-    "digit": '+ 354',
+    id: 10,
+    textsimple: 'Iceland',
+    digit: '+ 354',
   },
   {
-    "id": 11,
-    "textsimple": 'India',
-    "digit": '+ 91',
+    id: 11,
+    textsimple: 'India',
+    digit: '+ 91',
   },
   {
-    "id": 12,
-    "textsimple": 'Japan',
-    "digit": '+ 81',
+    id: 12,
+    textsimple: 'Japan',
+    digit: '+ 81',
   },
   {
-    "id": 13,
-    "textsimple": 'Kazakhstan',
-    "digit": '+ 7',
+    id: 13,
+    textsimple: 'Kazakhstan',
+    digit: '+ 7',
   },
   {
-    "id": 14,
-    "textsimple": 'Lebanon',
-    "digit": '+ 961',
+    id: 14,
+    textsimple: 'Lebanon',
+    digit: '+ 961',
   },
   {
-    "id": 15,
-    "textsimple": 'Liberia',
-    "digit": '+ 231',
+    id: 15,
+    textsimple: 'Liberia',
+    digit: '+ 231',
   },
   {
-    "id": 16,
-    "textsimple": 'Liechtenstein',
-    "digit": '+ 423',
+    id: 16,
+    textsimple: 'Liechtenstein',
+    digit: '+ 423',
   },
   {
-    "id": 17,
-    "textsimple": 'Luxembourg',
-    "digit": '+ 352',
+    id: 17,
+    textsimple: 'Luxembourg',
+    digit: '+ 352',
   },
   {
-    "id": 18,
-    "textsimple": 'Malawi',
-    "digit": '+ 256',
+    id: 18,
+    textsimple: 'Malawi',
+    digit: '+ 256',
   },
   {
-    "id": 19,
-    "textsimple": 'Maldives',
-    "digit": '+ 960',
+    id: 19,
+    textsimple: 'Maldives',
+    digit: '+ 960',
   },
   {
-    "id": 20,
-    "textsimple": 'Mexico',
-    "digit": '+ 52',
+    id: 20,
+    textsimple: 'Mexico',
+    digit: '+ 52',
   },
-]
+];
 
 export const Trendingdata = [
   {
@@ -157,7 +150,6 @@ export const Trendingdata = [
   {
     text: 'Dance',
   },
-
 ];
 export const EventListdata = [
   {
@@ -241,7 +233,6 @@ export const carouselItems = [
   },
 ];
 export const TrendingScreendata = [
-
   {
     text: 'Anon_Event',
     imageset: images.Slider_four_image,
@@ -328,97 +319,96 @@ export const TrendingScreendata = [
 ];
 export const Faqdataset = [
   {
-    "id": 1,
-    "paymentparegraph": "FAQ_paregraph_One",
-    "smalltext": 'FAQ_paregraph_Two',
+    id: 1,
+    paymentparegraph: 'FAQ_paregraph_One',
+    smalltext: 'FAQ_paregraph_Two',
   },
   {
-    "id": 2,
-    "paymentparegraph": "FAQ_paregraph_Three",
-    "smalltext": 'FAQ_paregraph_Four',
+    id: 2,
+    paymentparegraph: 'FAQ_paregraph_Three',
+    smalltext: 'FAQ_paregraph_Four',
   },
   {
-    "id": 3,
-    "paymentparegraph": "FAQ_paregraph_Five",
-    "smalltext": 'FAQ_paregraph_Six',
+    id: 3,
+    paymentparegraph: 'FAQ_paregraph_Five',
+    smalltext: 'FAQ_paregraph_Six',
   },
   {
-    "id": 4,
-    "paymentparegraph": "FAQ_Paregraph_Saven",
-    "smalltext": 'FAQ_Paregraph_Aeight',
+    id: 4,
+    paymentparegraph: 'FAQ_Paregraph_Saven',
+    smalltext: 'FAQ_Paregraph_Aeight',
   },
   {
-    "id": 5,
-    "paymentparegraph": "FAQ_Paregraph_Nine",
-    "smalltext": 'FAQ_Paregraph_Ten',
+    id: 5,
+    paymentparegraph: 'FAQ_Paregraph_Nine',
+    smalltext: 'FAQ_Paregraph_Ten',
   },
   {
-    "id": 6,
-    "paymentparegraph": "FAQ_Paregraph_Eleven",
-    "smalltext": 'FAQ_One',
+    id: 6,
+    paymentparegraph: 'FAQ_Paregraph_Eleven',
+    smalltext: 'FAQ_One',
   },
   {
-    "id": 7,
-    "paymentparegraph": "FAQ_Two",
-    "smalltext": 'FAQ_Three',
+    id: 7,
+    paymentparegraph: 'FAQ_Two',
+    smalltext: 'FAQ_Three',
   },
   {
-    "id": 8,
-    "paymentparegraph": "FAQ_Four",
-    "smalltext": 'FAQ_Five',
+    id: 8,
+    paymentparegraph: 'FAQ_Four',
+    smalltext: 'FAQ_Five',
   },
-]
+];
 export const LanguageDropdownData = [
-  { label: "English", value: 'en' },
-  { label: "Arabic", value: 'ara' },
-  { label: "Spanish", value: 'Spa' },
-  { label: "French", value: 'Fr' },
+  {label: 'English', value: 'en'},
+  {label: 'Arabic', value: 'ara'},
+  {label: 'Spanish', value: 'Spa'},
+  {label: 'French', value: 'Fr'},
 ];
 export const ChatDataText = [
   {
-    "id": 1,
-    "ChatSelf": 'Chat_1',
-    "ChatTime": '03:16',
-    "DateText": 'Chat_2',
-    "DateText_Actually": 'Chat_3',
-    "ChatTime_User": '03:18',
+    id: 1,
+    ChatSelf: 'Chat_1',
+    ChatTime: '03:16',
+    DateText: 'Chat_2',
+    DateText_Actually: 'Chat_3',
+    ChatTime_User: '03:18',
   },
   {
-    "id": 2,
-    "ChatSelf": 'Chat_4',
-    "ChatTime": '03:19',
-    "DateText": 'Chat_2',
-    "DateText_Actually": 'Chat_5',
-    "ChatTime_User": '03:19',
+    id: 2,
+    ChatSelf: 'Chat_4',
+    ChatTime: '03:19',
+    DateText: 'Chat_2',
+    DateText_Actually: 'Chat_5',
+    ChatTime_User: '03:19',
   },
   {
-    "id": 3,
-    "ChatSelf": 'Chat_6',
-    "ChatTime": '03:20',
-    "DateText": 'Chat_2',
-    "DateText_Actually": 'Chat_8',
-    "ChatTime_User": '03:19',
+    id: 3,
+    ChatSelf: 'Chat_6',
+    ChatTime: '03:20',
+    DateText: 'Chat_2',
+    DateText_Actually: 'Chat_8',
+    ChatTime_User: '03:19',
   },
- 
-]
+];
 export const Paymentdata = [
   {
-    "id": 1,
-    "paymentparegraph": "Payment_screen_Paragraph_One",
-    "image": images.Payment_image_three,
-    "smalltext": "Pay_Via_UPI_Label",
-    "walletstextset": "Wallets_Lebal",
+    id: 1,
+    paymentparegraph: 'Payment_screen_Paragraph_One',
+    image: images.Payment_image_three,
+    smalltext: 'Pay_Via_UPI_Label',
+    walletstextset: 'Wallets_Lebal',
   },
   {
-    "id": 2,
-    "paymentparegraph": "Payment_screen_Paragraph_Two",
-    "image": images.Payment_image_six,
-    "smalltext": "Paytm_Label",
+    id: 2,
+    paymentparegraph: 'Payment_screen_Paragraph_Two',
+    image: images.Payment_image_six,
+    smalltext: 'Paytm_Label',
   },
   {
-    "id": 3,
-    "paymentparegraph": "Payment_screen_Paragraph_Three",
-    "image": images.Payment_image_nine,
-    "smalltext": "MobikWik_Label",
+    id: 3,
+    paymentparegraph: 'Payment_screen_Paragraph_Three',
+    image: images.Payment_image_nine,
+    smalltext: 'MobikWik_Label',
   },
-]
+];

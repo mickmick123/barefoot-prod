@@ -1,26 +1,32 @@
-import React, { useState, useMemo } from "react";
-import { Text, View, ScrollView, KeyboardAvoidingView, TextInput, } from "react-native";
-import { HelpScreenStyles, Style } from '../../styles';
-import { Button, Spacing, ConfirmationAlert } from '../../components';
-import { SH } from '../../utils';
-import { RouteName } from '../../routes';
-import { useTranslation } from "react-i18next";
-import { useTheme } from '@react-navigation/native';
+import React, {useState, useMemo} from 'react';
+import {
+  Text,
+  View,
+  ScrollView,
+  KeyboardAvoidingView,
+  TextInput,
+} from 'react-native';
+import {HelpScreenStyles, Style} from '../../styles';
+import {Button, Spacing, ConfirmationAlert} from '../../components';
+import {SH} from '../../utils';
+import {RouteName} from '../../routes';
+import {useTranslation} from 'react-i18next';
+import {useTheme} from '@react-navigation/native';
 
-const HelpScreen = (props) => {
-  const { t } = useTranslation();
-  const { navigation } = props;
+const HelpScreen = props => {
+  const {t} = useTranslation();
+  const {navigation} = props;
   const [alertVisible, setAlertVisible] = useState(false);
-  const { Colors } = useTheme();
+  const {Colors} = useTheme();
   const HelpScreenStyle = useMemo(() => HelpScreenStyles(Colors), [Colors]);
   const [alertMessage, setAlertMessage] = useState('');
 
   var alertdata = {
-    'logout': t("Help_sand_mail_Successful"),
-  }
+    logout: t('Help_sand_mail_Successful'),
+  };
   const onoknutton = () => {
     navigation.navigate(RouteName.HOME_TAB);
-  }
+  };
   return (
     <View style={HelpScreenStyle.MinViewScreen}>
       <ScrollView
@@ -31,20 +37,29 @@ const HelpScreen = (props) => {
             <Spacing space={SH(30)} />
             <View style={HelpScreenStyle.MinContentView}>
               <View>
-                <TextInput style={HelpScreenStyle.TextInputWidth} placeholder={t("Type_Your_Message")} placeholderTextColor="gray" />
+                <TextInput
+                  style={HelpScreenStyle.TextInputWidth}
+                  placeholder={t('Type_Your_Message')}
+                  placeholderTextColor="gray"
+                />
               </View>
               <View>
-                <Text style={HelpScreenStyle.TextInputeText}>{t("Help_paregraph")}</Text>
+                <Text style={HelpScreenStyle.TextInputeText}>
+                  {t('Help_paregraph')}
+                </Text>
               </View>
             </View>
           </View>
         </KeyboardAvoidingView>
       </ScrollView>
       <View style={HelpScreenStyle.ButtonStyle}>
-        <Button onPress={() => {
-          setAlertVisible(true);
-          setAlertMessage(alertdata.logout);
-        }} title={t("Help_sand_mail")} />
+        <Button
+          onPress={() => {
+            setAlertVisible(true);
+            setAlertMessage(alertdata.logout);
+          }}
+          title={t('Help_sand_mail')}
+        />
       </View>
       <ConfirmationAlert
         message={alertMessage}
@@ -52,9 +67,11 @@ const HelpScreen = (props) => {
         iconVisible={true}
         setModalVisible={setAlertVisible}
         onPressCancel={() => setAlertVisible(!alertVisible)}
-        onPress={() => { setAlertVisible(!alertVisible), onoknutton() }}
+        onPress={() => {
+          setAlertVisible(!alertVisible), onoknutton();
+        }}
         buttonminview={HelpScreenStyle.FlexCenterButton}
-        buttonText={t("Ok")}
+        buttonText={t('Ok')}
       />
     </View>
   );

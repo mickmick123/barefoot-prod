@@ -1,8 +1,8 @@
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 import React, {useMemo} from 'react';
 import propTypes from 'prop-types';
-import { useTheme } from '@react-navigation/native';
-import { Colors } from '../../utils';
+import {useTheme} from '@react-navigation/native';
+import {Colors} from '../../utils';
 
 const ContainerComponent = ({
   children,
@@ -13,8 +13,7 @@ const ContainerComponent = ({
   statusBarPropStyle,
   containerPropStyle,
 }) => {
-
-  const { colors } = useTheme();
+  const {colors} = useTheme();
   const styles = useMemo(
     () =>
       StyleSheet.create({
@@ -24,7 +23,7 @@ const ContainerComponent = ({
         },
         containerStyle: {
           flex: 1,
-          backgroundColor: backgroundColor ?? Colors.theme_backgound
+          backgroundColor: backgroundColor ?? Colors.theme_backgound,
         },
       }),
     [backgroundColor, status_Bar, colors],
@@ -46,7 +45,7 @@ const ContainerComponent = ({
       </SafeAreaView>
     </View>
   );
-}
+};
 
 ContainerComponent.defaultProps = {
   backgroundColor: 'white',

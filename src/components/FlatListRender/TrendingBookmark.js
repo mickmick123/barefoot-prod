@@ -1,21 +1,26 @@
-import React, { useMemo } from 'react';
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import { HomeStyles } from '../../styles';
-import { Spacing, LikeUnlike, VectorIcon } from '../../components';
-import { SH, SF } from '../../utils';
-import { useTheme } from '@react-navigation/native';
-import { useTranslation } from "react-i18next";
+import React, {useMemo} from 'react';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {HomeStyles} from '../../styles';
+import {Spacing, LikeUnlike, VectorIcon} from '../../components';
+import {SH, SF} from '../../utils';
+import {useTheme} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
-const TrendingBookmark = (props) => {
-  const { Colors } = useTheme();
+const TrendingBookmark = props => {
+  const {Colors} = useTheme();
   const HomeStyle = useMemo(() => HomeStyles(Colors), [Colors]);
-  const { onPress, item } = props;
-  const { t } = useTranslation();
+  const {onPress, item} = props;
+  const {t} = useTranslation();
 
   return (
-    <TouchableOpacity style={HomeStyle.Setterendingviewbookmark} onPress={() => onPress()}>
+    <TouchableOpacity
+      style={HomeStyle.Setterendingviewbookmark}
+      onPress={() => onPress()}>
       <View>
-        <Image source={item.imageset} style={HomeStyle.Imagestylestwobookmark} />
+        <Image
+          source={item.imageset}
+          style={HomeStyle.Imagestylestwobookmark}
+        />
       </View>
       <View style={HomeStyle.Textviewstyles}>
         <Text style={HomeStyle.Titletextstyles}>{t(item.text)}</Text>
@@ -26,16 +31,29 @@ const TrendingBookmark = (props) => {
           </View>
           <View style={HomeStyle.Imageviewstyles}>
             <Image source={item.joiimage} style={HomeStyle.Imagestylestwo} />
-            <Image source={item.joiimagetwo} style={HomeStyle.Imagestylesthtree} />
-            <Image source={item.joiimagethree} style={HomeStyle.Imagestylesthfour} />
+            <Image
+              source={item.joiimagetwo}
+              style={HomeStyle.Imagestylesthtree}
+            />
+            <Image
+              source={item.joiimagethree}
+              style={HomeStyle.Imagestylesthfour}
+            />
           </View>
           <Text style={HomeStyle.Peopletextstyle}>{t(item.peopleklive)}</Text>
         </View>
         <Spacing space={SH(10)} />
         <View style={HomeStyle.Flexviewtwo}>
           <View style={HomeStyle.Flexrowstyles}>
-            <VectorIcon icon="FontAwesome" name="map-marker" size={SF(20)} color={Colors.theme_backgound} />
-            <Text style={HomeStyle.Mapstylesadrresh}>{t(item.locationaddresh)}</Text>
+            <VectorIcon
+              icon="FontAwesome"
+              name="map-marker"
+              size={SF(20)}
+              color={Colors.theme_backgound}
+            />
+            <Text style={HomeStyle.Mapstylesadrresh}>
+              {t(item.locationaddresh)}
+            </Text>
           </View>
           <LikeUnlike />
         </View>

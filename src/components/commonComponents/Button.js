@@ -1,26 +1,37 @@
-import React, { useMemo } from 'react';
-import { TouchableOpacity, StyleSheet, Text, Image, View } from 'react-native';
+import React, {useMemo} from 'react';
+import {TouchableOpacity, StyleSheet, Text, Image, View} from 'react-native';
 import PropTypes from 'prop-types';
-import { Colors, Fonts, SF, SH, SW } from '../../utils';
-import { useTheme } from '@react-navigation/native';
+import {Colors, Fonts, SF, SH, SW} from '../../utils';
+import {useTheme} from '@react-navigation/native';
 import images from '../../index';
-import { Lottie } from '../../components';
-import Icon from "react-native-vector-icons/AntDesign";
+import {Lottie} from '../../components';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 function Button(props) {
-  const { title, onPress, buttonStyle, disable, buttonTextStyle, plusicon, messageicon, imagesource, spacedImages, nextArraow } = props;
-  const { colors } = useTheme();
+  const {
+    title,
+    onPress,
+    buttonStyle,
+    disable,
+    buttonTextStyle,
+    plusicon,
+    messageicon,
+    imagesource,
+    spacedImages,
+    nextArraow,
+  } = props;
+  const {colors} = useTheme();
   const styles = useMemo(
     () =>
       StyleSheet.create({
         buttonStyle: {
-          backgroundColor: Colors.theme_backgound,     
+          backgroundColor: Colors.theme_backgound,
           alignItems: 'center',
           borderRadius: 200,
           justifyContent: 'center',
           width: '100%',
           height: SH(45),
-          shadowColor: "#000",
+          shadowColor: '#000',
           shadowOffset: {
             width: 0,
             height: Platform.OS === 'ios' ? 2 : 25,
@@ -30,54 +41,70 @@ function Button(props) {
           elevation: Platform.OS === 'ios' ? 1 : 3,
         },
         buttonTextStyle: {
-          color: "#FFF",
+          color: '#FFF',
           fontFamily: Fonts.Poppins_Medium,
           fontSize: SF(19),
           fontWeight: '600',
-          lineHeight: SH(24)
+          lineHeight: SH(24),
         },
         buttonViewStyle: {
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: spacedImages ? 'space-around' : 'center',
-          width: '100%'
+          width: '100%',
         },
         leftImageStyle: {
-          marginVertical: SW(5)
+          marginVertical: SW(5),
         },
         nextArraowStyle: {
           width: SW(60),
         },
         iconstyles: {
-          paddingRight: SH(10)
-        }
+          paddingRight: SH(10),
+        },
       }),
     [disable, spacedImages, colors],
   );
   return (
     <TouchableOpacity
       disabled={disable}
-      style={[styles.buttonStyle, { ...buttonStyle }]}
+      style={[styles.buttonStyle, {...buttonStyle}]}
       onPress={() => onPress()}>
       <View style={styles.buttonViewStyle}>
-        {imagesource &&
-          <Image source={imagesource} style={styles.leftImageStyle} resizeMode='cover' />
-        }
-        {plusicon &&
-          <Icon name={plusicon} size={20} style={styles.iconstyles} color={Colors.white_text_color} />
-        }
-        {messageicon &&
-          <Icon name={messageicon} size={20} style={styles.iconstyles} color={Colors.theme_backgound} />
-        }
+        {imagesource && (
+          <Image
+            source={imagesource}
+            style={styles.leftImageStyle}
+            resizeMode="cover"
+          />
+        )}
+        {plusicon && (
+          <Icon
+            name={plusicon}
+            size={20}
+            style={styles.iconstyles}
+            color={Colors.white_text_color}
+          />
+        )}
+        {messageicon && (
+          <Icon
+            name={messageicon}
+            size={20}
+            style={styles.iconstyles}
+            color={Colors.theme_backgound}
+          />
+        )}
 
-        <Text style={[styles.buttonTextStyle, { ...buttonTextStyle }]}>{title}</Text>
+        <Text style={[styles.buttonTextStyle, {...buttonTextStyle}]}>
+          {title}
+        </Text>
         <View />
-        {nextArraow &&
+        {nextArraow && (
           <Lottie
             Lottiewidthstyle={styles.nextArraowStyle}
             source={images.Right_Aerrow}
           />
-        }
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -85,7 +112,7 @@ function Button(props) {
 
 Button.defaultProps = {
   title: '',
-  onPress: () => { },
+  onPress: () => {},
   buttonStyle: {},
   disable: false,
   imagesource: null,
@@ -100,7 +127,7 @@ Button.propTypes = {
   disable: PropTypes.bool,
   imagesource: PropTypes.any,
   buttonTextStyle: PropTypes.shape({}),
-  spacedImages: PropTypes.bool
+  spacedImages: PropTypes.bool,
 };
 
 export default Button;

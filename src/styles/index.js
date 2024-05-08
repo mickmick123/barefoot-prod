@@ -13,15 +13,3 @@ export * from './AddEventStyles';
 export * from './HelpScreenandFAQStyles';
 export * from './ScannerStyles';
 export * from './SettingsStyle';
-
-
-
-
-
-
-
-
-
-
-
-

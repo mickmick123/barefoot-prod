@@ -15,7 +15,7 @@ function Spacing({space, horizontal, backgroundColor}) {
   );
 
   return <View style={[styles.spacerStyle]} />;
-};
+}
 
 Spacing.defaultProps = {
   space: 10,

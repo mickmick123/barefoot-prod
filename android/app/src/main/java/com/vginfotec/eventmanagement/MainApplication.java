@@ -37,6 +37,7 @@ public class MainApplication extends Application implements ReactApplication {
           // packages.add(new MyReactNativePackage());
             new VectorIconsPackage();
           new ReanimatedJSIModulePackage();
+          // new RNGooglePlacePickerPackage();
           return packages;
         }
 
