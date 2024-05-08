@@ -15,7 +15,6 @@ function DatePicker({
   const {Colors} = useTheme();
   const AddEventsStyle = useMemo(() => AddEventsStyles(Colors), [Colors]);
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-
   const showDateTimePicker = () => {
     setDatePickerVisibility(true);
   };
@@ -23,10 +22,14 @@ function DatePicker({
     setDatePickerVisibility(false);
   };
   const handleDatePicked = date => {
-    hideDateTimePicker(),
+    hideDateTimePicker();
+    if (mode === 'date') {
       setdateselcet(
         moment(date, 'YYYY-MM-DDTHH:mm:ss Z').local().format('DD-MM-YYYY'),
       );
+    } else {
+      setdateselcet(moment(date, 'YYYY-MM-DDTHH:mm:ss Z').local().format('LT'));
+    }
   };
 
   return (
@@ -35,7 +38,9 @@ function DatePicker({
         <TouchableOpacity
           style={Style.dobView}
           onPress={() => showDateTimePicker()}>
-          <Text style={AddEventsStyle.datetextstyles}>{placeholder}</Text>
+          <Text style={AddEventsStyle.datetextstyles}>
+            {dateselcet === '' ? placeholder : dateselcet}
+          </Text>
         </TouchableOpacity>
       </View>
       <DateTimePicker

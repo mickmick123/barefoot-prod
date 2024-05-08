@@ -94,7 +94,6 @@ const AddEventsScreen = props => {
       user_id: userData._id,
       event_location: coodinates,
     };
-    console.log(params);
     const res = await event_regsitration(params);
     console.log(res);
     // setAlertVisible(true);
@@ -182,7 +181,6 @@ const AddEventsScreen = props => {
                     numberOfLines={4}
                     onChangeText={val => setDescrtiption(val)}
                     value={descrtiption}
-                    maxLength={10}
                     placeholderTextColor={Colors.gray_text_color}
                     inputStyle={AddEventsStyle.Inputstylewidth}
                   />
@@ -303,7 +301,7 @@ const AddEventsScreen = props => {
         iconVisible={true}
       />
       <View style={AddEventsStyle.Bottombutton}>
-        {coodinates.length > 0 ? (
+        {Object.keys(coodinates).length > 0 ? (
           <Button
             onPress={() => {
               registerEvent();
