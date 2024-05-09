@@ -13,8 +13,7 @@ import {SH, SF, SW, widthPercent, Colors} from '../../utils';
 import IconF from 'react-native-vector-icons/FontAwesome';
 import {AddEventsStyles} from '../../styles';
 import {launchImageLibrary} from 'react-native-image-picker';
-import md5 from 'crypto-js/md5';
-
+import Base64 from '../../utils/base64';
 function ImgPicker(props) {
   const {showdatatwo, showdata, userimagstyle, text, setFiles, files} = props;
   const AddEventsStyle = useMemo(() => AddEventsStyles(Colors), [Colors]);
@@ -69,30 +68,6 @@ function ImgPicker(props) {
       )
       .join('');
   };
-  const btoa = input => {
-    let str = input;
-    let output = '';
-    const chars =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-
-    for (
-      let block = 0, charCode, i = 0, map = chars;
-      str.charAt(i | 0) || ((map = '='), i % 1);
-      output += map.charAt(63 & (block >> (8 - (i % 1) * 8)))
-    ) {
-      charCode = str.charCodeAt((i += 3 / 4));
-
-      if (charCode > 0xff) {
-        throw new Error(
-          "'btoa' failed: The string to be encoded contains characters outside of the Latin1 range.",
-        );
-      }
-
-      block = (block << 8) | charCode;
-    }
-
-    return output;
-  };
 
   const chooseFile = () => {
     let options = {
@@ -112,7 +87,7 @@ function ImgPicker(props) {
         return;
       }
       // response.assets[0].base64 = lzw_encode(response.assets[0].base64);
-      const encrypted = await btoa(JSON.stringify(response.assets[0]));
+      const encrypted = await Base64.btoa(JSON.stringify(response.assets[0]));
       setFiles(oldArray => [encrypted, ...oldArray]);
       setFilePath(response.assets[0].base64);
       SetImgpathselect(response.assets[0].uri);

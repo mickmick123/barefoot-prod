@@ -93,12 +93,14 @@ const AddEventsScreen = props => {
       images: files,
       user_id: userData._id,
       event_location: coodinates,
+      descrtiption: descrtiption,
     };
     const res = await event_regsitration(params);
-    console.log(res);
-    // setAlertVisible(true);
-    // setAlertMessage(alertdata.logout);
-    // Setokbutton('');
+    if (res.success) {
+      setAlertVisible(true);
+      setAlertMessage(alertdata.logout);
+      Setokbutton('');
+    }
   };
 
   const onDragEnd = e => {

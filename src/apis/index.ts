@@ -1,5 +1,5 @@
+// const BASE_URL = "http://localhost:3000/api";
 const BASE_URL = "https://next-api-barefoot.vercel.app/api";
-
 export async function user_register(params: any) {
     try {
         return fetch(`${BASE_URL}/signup`, {
@@ -77,6 +77,23 @@ export async function event_regsitration(params: any) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(params)
+        })
+        .then((res) => {
+            return res.json();
+        })
+    } catch (err) {
+        console.log(JSON.stringify(err));
+    }
+}
+
+
+export async function getEvents() {
+    try {
+        return fetch(`${BASE_URL}/events/all`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
         })
         .then((res) => {
             return res.json();

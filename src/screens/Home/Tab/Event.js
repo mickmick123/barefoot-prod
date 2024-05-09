@@ -1,4 +1,4 @@
-import React, {useState, useMemo} from 'react';
+import React, {useState, useMemo, useEffect} from 'react';
 import {
   View,
   ScrollView,
@@ -13,11 +13,12 @@ import RouteName from '../../../routes/RouteName';
 import {get_data_action} from '../../../redux/action/DataAction';
 import {useDispatch} from 'react-redux';
 import {useTheme} from '@react-navigation/native';
+import {getEvents} from '../../../apis';
 
 const Event = props => {
   const [slectdate, setslectdate] = useState('Past Events');
   const {Colors} = useTheme();
-
+  const [events, setEvents] = useState([]);
   const TrendingStyle = useMemo(() => TrendingStyles(Colors), [Colors]);
   const {navigation} = props;
   const dispatch = useDispatch();
@@ -25,10 +26,20 @@ const Event = props => {
   const selectedcolortwo = item => {
     setslectdate(item);
   };
+
   const Eventdata = Eventdata => {
     dispatch(get_data_action(Eventdata));
     navigation.navigate(RouteName.EVENTS_DETAILS_SCREEN);
   };
+
+  const getEventData = async () => {
+    const res = await getEvents();
+    setEvents(res.data);
+  };
+
+  useEffect(() => {
+    getEventData();
+  }, []);
 
   return (
     <View
@@ -57,7 +68,7 @@ const Event = props => {
                 />
                 <Spacing space={SH(20)} />
                 <FlatList
-                  data={TrendingScreendata}
+                  data={events}
                   numColumns={1}
                   showsHorizontalScrollIndicator={false}
                   renderItem={({item}) => (

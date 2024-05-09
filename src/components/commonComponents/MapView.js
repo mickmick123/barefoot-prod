@@ -26,6 +26,12 @@ function MapLocation(props) {
   );
   return (
     <MapView
+      initialRegion={{
+        latitude: position.latitude,
+        longitude: position.longitude,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      }}
       provider={PROVIDER_GOOGLE}
       style={styles.mapConformlocationet}
       scrollEnabled={true}

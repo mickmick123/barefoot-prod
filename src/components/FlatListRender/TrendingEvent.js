@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useEffect, useMemo} from 'react';
 import {Text, View, Image} from 'react-native';
 import {HomeStyles, TrendingStyles} from '../../styles';
 import {Button, Spacing, LikeUnlike, VectorIcon} from '../../components';
@@ -13,6 +13,10 @@ const TrendingEvent = props => {
   const {onPress, item, eventAround} = props;
   const {t} = useTranslation();
 
+  const randomIntFromInterval = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
   return (
     <View style={TrendingStyle.Eventlistview}>
       <View>
@@ -20,16 +24,24 @@ const TrendingEvent = props => {
           <View style={TrendingStyle.Flexrowbox}>
             <View style={TrendingStyle.Widthstyles}>
               <Image
-                source={item.imageset}
+                source={{
+                  uri: `data:image/png;base64,${
+                    item.images[
+                      randomIntFromInterval(0, item.images.length - 1)
+                    ]
+                  }`,
+                }}
                 style={TrendingStyle.Setimagestyles}
               />
             </View>
             <View style={TrendingStyle.Widthstylestwo}>
-              <Text style={TrendingStyle.Textstylesbastu}>{t(item.text)}</Text>
+              <Text style={TrendingStyle.Textstylesbastu}>
+                {item.event_name}
+              </Text>
               <View style={TrendingStyle.Flexrowmusiz}>
                 <View style={HomeStyle.Musicborderview}>
                   <Text style={HomeStyle.Musictextstryles}>
-                    {t(item.musicname)}
+                    {item.event_type}
                   </Text>
                 </View>
                 <View style={HomeStyle.watchingflexviewstyle}>
@@ -62,7 +74,7 @@ const TrendingEvent = props => {
                     color={Colors.theme_backgound}
                   />
                   <Text style={HomeStyle.Mapstylesadrresh}>
-                    {t(item.locationaddresh)}
+                    {item.description}
                   </Text>
                 </View>
                 <LikeUnlike />
@@ -85,6 +97,7 @@ const TrendingEvent = props => {
           />
         </View>
       </View>
+
       <View style={HomeStyle.Eventviews}>
         <View style={HomeStyle.Eventsmallview}>
           <Text style={HomeStyle.Eventtextstyles}>{t(item.datetext)}</Text>
