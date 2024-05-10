@@ -102,3 +102,19 @@ export async function getEvents() {
         console.log(JSON.stringify(err));
     }
 }
+
+export async function getEventMarkers(lng: any, lat: any) {
+    try {
+        return fetch(`${BASE_URL}/events/markers?lng=${lng}&lat=${lat}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then((res) => {
+            return res.json();
+        })
+    } catch (err) {
+        console.log(JSON.stringify(err));
+    }
+}

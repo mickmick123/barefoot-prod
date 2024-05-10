@@ -150,7 +150,6 @@ export default EventsStyles = Colors =>
       position: 'absolute',
       width: SW(60),
       height: SH(64),
-      backgroundColor: Colors.white_text_color,
       top: SH(10),
       zIndex: 2,
       flexDirection: 'row',

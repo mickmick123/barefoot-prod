@@ -43,5 +43,6 @@ const images = {
   Languageanimation: require('./LottieAnimation/languageanimation.json'),
   App_logo_main: require('./logo.png'),
   App_icon_main: require('./icon.png'),
+  Event_Icon: require('./calendar.png'),
 };
 export default images;

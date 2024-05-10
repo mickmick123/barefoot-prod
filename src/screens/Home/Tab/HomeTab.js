@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useEffect, useMemo} from 'react';
 import {
   View,
   ScrollView,
@@ -16,12 +16,16 @@ import {SH, Trendingboxdata} from '../../../utils';
 import RouteName from '../../../routes/RouteName';
 import {useTheme} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
+import {useSelector} from 'react-redux';
 
 const HomeTabset = props => {
   const {Colors} = useTheme();
   const HomeStyle = useMemo(() => HomeStyles(Colors), [Colors]);
   const {navigation} = props;
   const {t} = useTranslation();
+  const {listEvents} = useSelector(state => state.DataReducer) || {
+    listEvents,
+  };
 
   return (
     <View style={[HomeStyle.minstyleviewphotograpgy, HomeStyle.bgcolorset]}>
@@ -58,7 +62,7 @@ const HomeTabset = props => {
               <EventsAll />
               <View>
                 <FlatList
-                  data={Trendingboxdata}
+                  data={listEvents}
                   horizontal
                   showsHorizontalScrollIndicator={false}
                   renderItem={({item}) => (

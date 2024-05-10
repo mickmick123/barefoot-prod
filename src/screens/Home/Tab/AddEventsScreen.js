@@ -35,7 +35,7 @@ const AddEventsScreen = props => {
   const [value, setValue] = useState(null);
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
-  const [descrtiption, setDescrtiption] = useState('');
+  const [description, setdescription] = useState('');
   const [date_start, setDateStart] = useState('');
   const [date_end, setDateEnd] = useState('');
   const [time_start, setTimeStart] = useState('');
@@ -93,7 +93,7 @@ const AddEventsScreen = props => {
       images: files,
       user_id: userData._id,
       event_location: coodinates,
-      descrtiption: descrtiption,
+      description: description,
     };
     const res = await event_regsitration(params);
     if (res.success) {
@@ -181,8 +181,8 @@ const AddEventsScreen = props => {
                     title={t('Event_Description')}
                     multiline={true}
                     numberOfLines={4}
-                    onChangeText={val => setDescrtiption(val)}
-                    value={descrtiption}
+                    onChangeText={val => setdescription(val)}
+                    value={description}
                     placeholderTextColor={Colors.gray_text_color}
                     inputStyle={AddEventsStyle.Inputstylewidth}
                   />

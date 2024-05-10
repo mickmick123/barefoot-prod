@@ -16,7 +16,9 @@ import {useSelector} from 'react-redux';
 import RouteName from '../../routes/RouteName';
 import {useTheme} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
-
+import {randomIntFromInterval} from '../../utils/randomNumber';
+import moment from 'moment';
+import {checkDates, checkTime} from '../../utils/dates';
 const EventsDetails = props => {
   const {Colors} = useTheme();
   const EventsStyle = useMemo(() => EventsStyles(Colors), [Colors]);
@@ -63,7 +65,13 @@ const EventsDetails = props => {
           <View style={EventsStyle.minflexview}>
             <View style={EventsStyle.minviewsigninscreen}>
               <Image
-                source={detailsStore.imageset}
+                source={{
+                  uri: `data:image/png;base64,${
+                    detailsStore.images[
+                      randomIntFromInterval(0, detailsStore.images.length - 1)
+                    ]
+                  }`,
+                }}
                 resizeMode="cover"
                 style={EventsStyle.Imagestyleset}
               />
@@ -71,7 +79,7 @@ const EventsDetails = props => {
                 <View style={EventsStyle.Flexview}>
                   <TouchableOpacity style={EventsStyle.Setmusictextstyle}>
                     <Text style={EventsStyle.Musictetx}>
-                      {t(detailsStore.musicname)}
+                      {detailsStore.event_type}
                     </Text>
                   </TouchableOpacity>
                   <View style={EventsStyle.watchingflexviewstyle}>
@@ -90,14 +98,14 @@ const EventsDetails = props => {
                       />
                     </View>
                     <Text style={EventsStyle.Peopletextstyle}>
-                      {t(detailsStore.peopleklive)}
+                      {t('Join_Text')}
                     </Text>
                   </View>
                 </View>
                 <Spacing space={SH(20)} />
                 <View>
                   <Text style={EventsStyle.Titlestyles}>
-                    {t(detailsStore.text)}
+                    {t(detailsStore.description || 'N/A')}
                   </Text>
                 </View>
                 <View>
@@ -113,10 +121,18 @@ const EventsDetails = props => {
                     </View>
                     <View>
                       <Text style={EventsStyle.Settitletext}>
-                        {detailsStore.datetext}
+                        {checkDates(
+                          detailsStore.date_start,
+                          detailsStore.date_end,
+                        )}
                       </Text>
                       <Text style={EventsStyle.Settitletexttwo}>
-                        {t('Sunday_Text')}
+                        {checkTime(
+                          detailsStore.date_start,
+                          detailsStore.date_end,
+                          detailsStore.time_start,
+                          detailsStore.time_end,
+                        )}
                       </Text>
                       <Spacing space={SH(4)} />
                       <ConfirmationAlert
@@ -156,7 +172,12 @@ const EventsDetails = props => {
                         {t(detailsStore.locationaddresh)}
                       </Text>
                       <Text style={EventsStyle.Settitletexttwo}>
-                        {t('Sunday_Text')}
+                        {checkTime(
+                          detailsStore.date_start,
+                          detailsStore.date_end,
+                          detailsStore.time_start,
+                          detailsStore.time_end,
+                        )}
                       </Text>
                       <Spacing space={SH(4)} />
                       <Button

@@ -25,7 +25,7 @@ function DatePicker({
     hideDateTimePicker();
     if (mode === 'date') {
       setdateselcet(
-        moment(date, 'YYYY-MM-DDTHH:mm:ss Z').local().format('DD-MM-YYYY'),
+        moment(date, 'YYYY-MM-DDTHH:mm:ss Z').local().format('YYYY-MM-DD'),
       );
     } else {
       setdateselcet(moment(date, 'YYYY-MM-DDTHH:mm:ss Z').local().format('LT'));

@@ -1,2 +1,4 @@
 export const DATA_DETAILES_TYPE = 'DATA_DETAILES_TYPE';
 export const USER_DETAILS = 'USER_DETAILS';
+export const LIST_EVENTS = 'LIST_EVENTS';
+export const LIST_MARKERS = 'LIST_MARKERS';

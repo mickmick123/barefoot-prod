@@ -303,10 +303,10 @@ export default LocationStyles = Colors =>
       borderRadius: 300,
     },
     setimahmapstylefive: {
-      height: 70,
-      width: 70,
+      height: 40,
+      width: 40,
       borderRadius: 300,
-      marginLeft: 190,
-      marginTop: 100,
+      // marginLeft: 190,
+      // marginTop: 100,
     },
   });

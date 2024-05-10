@@ -1,4 +1,4 @@
-import React, {useState, useMemo} from 'react';
+import React, {useState, useMemo, useEffect} from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import {HomeStyles} from '../../../../styles';
@@ -6,6 +6,9 @@ import {carouselItems, SH, widthPercent} from '../../../../utils';
 import {Button, Spacing} from '../../../../components';
 import {useTheme} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
+import {getEvents} from '../../../../apis';
+import {randomIntFromInterval} from '../../../../utils/randomNumber';
+import {useSelector} from 'react-redux';
 
 const App = props => {
   const {Colors} = useTheme();
@@ -15,6 +18,10 @@ const App = props => {
   const HomeStyle = useMemo(() => HomeStyles(Colors), [Colors]);
   const {t} = useTranslation();
 
+  const {listEvents} = useSelector(state => state.DataReducer) || {
+    listEvents,
+  };
+
   const renderItem = ({item, index}) => {
     return (
       <TouchableOpacity
@@ -22,11 +29,18 @@ const App = props => {
         onPress={() => onPress()}>
         <View style={HomeStyle.flexrowimagandtext}>
           <View style={HomeStyle.imagecenyer}>
-            <Image source={item.imge} style={HomeStyle.SliderImageStyles} />
+            <Image
+              source={{
+                uri: `data:image/png;base64,${
+                  item.images[randomIntFromInterval(0, item.images.length - 1)]
+                }`,
+              }}
+              style={HomeStyle.SliderImageStyles}
+            />
           </View>
         </View>
         <View style={HomeStyle.postionaddinternation}>
-          <Text style={HomeStyle.Colorwhitetext}>{t(item.text)}</Text>
+          <Text style={HomeStyle.Colorwhitetext}>{item.event_name}</Text>
           <Spacing space={SH(15)} />
           <Button
             onPress={() => buyticket()}
@@ -42,7 +56,7 @@ const App = props => {
     <View style={[HomeStyle.exampleContainer, HomeStyle.bgcolorset]}>
       <Carousel
         ref={c => (_slider1Ref = c)}
-        data={carouselItems}
+        data={listEvents}
         renderItem={renderItem}
         sliderWidth={widthPercent(100)}
         itemWidth={widthPercent(85)}

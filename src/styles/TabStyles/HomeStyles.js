@@ -319,7 +319,6 @@ export default HomeStyles = Colors =>
       top: SH(5),
     },
     Setbgcolortext: {
-      backgroundColor: Colors.white_text_color,
       paddingVertical: SH(2),
       flexDirection: 'row',
       alignItems: 'center',

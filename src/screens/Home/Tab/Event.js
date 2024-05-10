@@ -14,9 +14,13 @@ import {get_data_action} from '../../../redux/action/DataAction';
 import {useDispatch} from 'react-redux';
 import {useTheme} from '@react-navigation/native';
 import {getEvents} from '../../../apis';
+import {useSelector} from 'react-redux';
 
 const Event = props => {
   const [slectdate, setslectdate] = useState('Past Events');
+  const {listEvents} = useSelector(state => state.DataReducer) || {
+    listEvents,
+  };
   const {Colors} = useTheme();
   const [events, setEvents] = useState([]);
   const TrendingStyle = useMemo(() => TrendingStyles(Colors), [Colors]);
@@ -32,14 +36,10 @@ const Event = props => {
     navigation.navigate(RouteName.EVENTS_DETAILS_SCREEN);
   };
 
-  const getEventData = async () => {
-    const res = await getEvents();
-    setEvents(res.data);
+  const EventLocation = Eventdata => {
+    dispatch(get_data_action(Eventdata));
+    navigation.navigate(RouteName.EVENT_AROUND_MAP);
   };
-
-  useEffect(() => {
-    getEventData();
-  }, []);
 
   return (
     <View
@@ -68,7 +68,7 @@ const Event = props => {
                 />
                 <Spacing space={SH(20)} />
                 <FlatList
-                  data={events}
+                  data={listEvents}
                   numColumns={1}
                   showsHorizontalScrollIndicator={false}
                   renderItem={({item}) => (
@@ -76,9 +76,7 @@ const Event = props => {
                       onPress={() => Eventdata(item)}
                       item={item}
                       slectdate={slectdate}
-                      eventAround={() =>
-                        navigation.navigate(RouteName.EVENT_AROUND_MAP)
-                      }
+                      eventAround={() => EventLocation(item)}
                     />
                   )}
                   keyExtractor={item => item.id}

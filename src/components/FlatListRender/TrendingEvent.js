@@ -5,17 +5,13 @@ import {Button, Spacing, LikeUnlike, VectorIcon} from '../../components';
 import {SH, SF} from '../../utils';
 import {useTheme} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
-
+import {randomIntFromInterval} from '../../utils/randomNumber';
 const TrendingEvent = props => {
   const {Colors} = useTheme();
   const HomeStyle = useMemo(() => HomeStyles(Colors), [Colors]);
   const TrendingStyle = useMemo(() => TrendingStyles(Colors), [Colors]);
   const {onPress, item, eventAround} = props;
   const {t} = useTranslation();
-
-  const randomIntFromInterval = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
 
   return (
     <View style={TrendingStyle.Eventlistview}>
@@ -60,7 +56,7 @@ const TrendingEvent = props => {
                     />
                   </View>
                   <Text style={HomeStyle.Peopletextstyle}>
-                    {t(item.peopleklive)}
+                    {t('Join_Text')}
                   </Text>
                 </View>
               </View>
@@ -74,7 +70,7 @@ const TrendingEvent = props => {
                     color={Colors.theme_backgound}
                   />
                   <Text style={HomeStyle.Mapstylesadrresh}>
-                    {item.description}
+                    {item.description || 'N/A'}
                   </Text>
                 </View>
                 <LikeUnlike />

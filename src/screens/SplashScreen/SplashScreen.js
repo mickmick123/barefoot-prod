@@ -7,11 +7,16 @@ import {Style} from '../../styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useDispatch} from 'react-redux';
 import {color_picker_set_action} from '../../redux/action/CommonAction';
-import {user_data} from '../../redux/action/DataAction';
+import {
+  list_events,
+  list_markers,
+  user_data,
+} from '../../redux/action/DataAction';
 import {useSelector} from 'react-redux';
 import {RouteName} from '../../routes';
 import {Lottie} from '../../components';
-import {user_validation} from '../../apis';
+import {getEventMarkers, getEvents, user_validation} from '../../apis';
+import Geolocation from '@react-native-community/geolocation';
 const SplashScreen = ({navigation}) => {
   const {colorrdata} = useSelector(state => state.commonReducer) || {};
   const {userData} = useSelector(state => state.DataReducer) || {
@@ -19,6 +24,27 @@ const SplashScreen = ({navigation}) => {
   };
   StatusBar.setBackgroundColor(colorrdata);
   const dispatch = useDispatch();
+
+  const loadEventMarkers = async () => {
+    Geolocation.getCurrentPosition(async pos => {
+      const crd = pos.coords;
+      console.log('position', crd.latitude);
+      if (crd) {
+        const markers = await getEventMarkers(crd.longitude, crd.latitude);
+        dispatch(list_markers(markers.data));
+      }
+    });
+  };
+
+  const getEventData = async () => {
+    const res = await getEvents();
+    dispatch(list_events(res.data));
+  };
+
+  useEffect(() => {
+    getEventData();
+    loadEventMarkers();
+  });
 
   useEffect(() => {
     AsyncStorage.getItem('visited').then(async value => {

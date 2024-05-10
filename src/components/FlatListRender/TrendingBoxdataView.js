@@ -5,6 +5,8 @@ import {Spacing, LikeUnlike, VectorIcon} from '../../components';
 import {SH, SF} from '../../utils';
 import {useTheme} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
+import {randomIntFromInterval} from '../../utils/randomNumber';
+import {checkTime} from '../../utils/dates';
 
 const TrendingBoxdata = props => {
   const {Colors} = useTheme();
@@ -17,14 +19,21 @@ const TrendingBoxdata = props => {
       style={HomeStyle.Setterendingview}
       onPress={() => onPress()}>
       <View>
-        <Image source={item.imageset} style={HomeStyle.Imagestyles} />
+        <Image
+          source={{
+            uri: `data:image/png;base64,${
+              item.images[randomIntFromInterval(0, item.images.length - 1)]
+            }`,
+          }}
+          style={HomeStyle.Imagestyles}
+        />
       </View>
       <View style={HomeStyle.Textviewstyles}>
-        <Text style={HomeStyle.Titletextstyles}>{t(item.text)}</Text>
+        <Text style={HomeStyle.Titletextstyles}>{item.event_name}</Text>
         <Spacing space={SH(5)} />
         <View style={HomeStyle.Minflexviewstyles}>
           <View style={HomeStyle.Musicborderview}>
-            <Text style={HomeStyle.Musictextstryles}>{t(item.musicname)}</Text>
+            <Text style={HomeStyle.Musictextstryles}>{t(item.event_type)}</Text>
           </View>
           <View style={HomeStyle.Imageviewstyles}>
             <Image source={item.joiimage} style={HomeStyle.Imagestylestwo} />
@@ -37,7 +46,7 @@ const TrendingBoxdata = props => {
               style={HomeStyle.Imagestylesthfour}
             />
           </View>
-          <Text style={HomeStyle.Peopletextstyle}>{t(item.peopleklive)}</Text>
+          <Text style={HomeStyle.Peopletextstyle}>{t('Join_Text')}</Text>
         </View>
         <Spacing space={SH(10)} />
         <View style={HomeStyle.Flexviewtwo}>
@@ -49,7 +58,7 @@ const TrendingBoxdata = props => {
               color={Colors.theme_backgound}
             />
             <Text style={HomeStyle.Mapstylesadrresh}>
-              {t(item.locationaddresh)}
+              {item.address || 'N/A'}
             </Text>
           </View>
           <LikeUnlike />
@@ -57,7 +66,14 @@ const TrendingBoxdata = props => {
       </View>
       <View style={HomeStyle.Dateview}>
         <View style={HomeStyle.Setbgcolortext}>
-          <Text style={HomeStyle.Textstyledate}>{t(item.datetext)}</Text>
+          <Text style={HomeStyle.Textstyledate}>
+            {checkTime(
+              item.date_start,
+              item.date_end,
+              item.time_start,
+              item.time_end,
+            )}
+          </Text>
         </View>
       </View>
     </TouchableOpacity>
